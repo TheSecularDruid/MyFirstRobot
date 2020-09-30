@@ -17,14 +17,7 @@ if __name__ == '__main__':
     port = ports[0]
     print('Using the first on the list', port)
 
-    dxl_io = pypot.dynamixel.DxlIO(port)
-    print('Connected!')
-
-    # dxl_io.factory_reset()
-    # print("reset !")
-    # exit(0)
-
-    found_ids = dxl_io.scan()
+    found_ids = dxl_io.scan(range(4))
     print('Found ids:', found_ids)
 
     if len(found_ids) < 2:
