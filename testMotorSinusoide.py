@@ -49,5 +49,5 @@ if __name__ == '__main__':
         pos = AMP * numpy.sin(2 * numpy.pi * FREQ * t)
         dxl_io.set_goal_position(dict(zip(ids, itertools.repeat(pos))))
 
-        time.sleep(0.02)
+        time.sleep(0.2)
 
