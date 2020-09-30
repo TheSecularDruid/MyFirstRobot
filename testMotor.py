@@ -6,4 +6,5 @@ if not ports:
 
 dxl_io = pypot.dynamixel.DxlIO(ports[0])
 dxl_io.set_wheel_mode([1])
-dxl_io.set_moving_speed({1: 0})
+dxl_io.set_moving_speed(0)
+# {1: 10}
