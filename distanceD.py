@@ -11,11 +11,8 @@ if __name__ == '__main__':
     ports = pypot.dynamixel.get_available_ports()
     print('available ports:', ports)
 
-    if not ports:
-        raise IOError('No port available.')
 
-    port = ports[0]
-    print('Using the first on the list', port)
+
 
 
 
