@@ -14,7 +14,7 @@ if __name__ == '__main__':
     if not ports:
         raise IOError('No port available.')
 
-    port = ports[1]
+    port = ports[0]
     print('Using the first on the list', port)
 
     dxl_io = pypot.dynamixel.DxlIO(port)
@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # print("reset !")
     # exit(0)
 
-    found_ids = dxl_io.scan()
+    found_ids = dxl_io.scan(range(10))
     print('Found ids:', found_ids)
 
     if len(found_ids) < 2:
