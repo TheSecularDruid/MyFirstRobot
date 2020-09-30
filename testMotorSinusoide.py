@@ -21,7 +21,9 @@ if __name__ == '__main__':
     print('Connected!')
 
     dxl_io.factory_reset()
-
+    print("reset !")
+    exit(0)
+    
     found_ids = dxl_io.scan()
     print('Found ids:', found_ids)
 
