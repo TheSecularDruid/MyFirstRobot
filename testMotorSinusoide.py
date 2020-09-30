@@ -14,7 +14,7 @@ if __name__ == '__main__':
     if not ports:
         raise IOError('No port available.')
 
-    port = ports[0]
+    port = ports[1]
     print('Using the first on the list', port)
 
     dxl_io = pypot.dynamixel.DxlIO(port)
