@@ -6,7 +6,7 @@ if not ports:
 
 dxl_io = pypot.dynamixel.DxlIO(ports[1])
 dxl_io.set_wheel_mode([1])
- t0 = time.time()
+t0 = time.time()
     while True:
         t = time.time()
         if (t - t0) > 5:
