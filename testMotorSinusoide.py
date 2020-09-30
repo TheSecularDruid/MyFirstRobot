@@ -20,6 +20,8 @@ if __name__ == '__main__':
     dxl_io = pypot.dynamixel.DxlIO(port)
     print('Connected!')
 
+    dxl_io.factory_reset()
+
     found_ids = dxl_io.scan()
     print('Found ids:', found_ids)
 
