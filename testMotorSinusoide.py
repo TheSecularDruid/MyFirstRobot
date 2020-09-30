@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # print("reset !")
     # exit(0)
 
-    found_ids = dxl_io.scan(range(10))
+    found_ids = dxl_io.scan()
     print('Found ids:', found_ids)
 
     if len(found_ids) < 2:
