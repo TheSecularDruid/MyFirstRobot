@@ -17,7 +17,7 @@ if __name__ == '__main__':
     port = ports[0]
     print('Using the first on the list', port)
 
-    found_ids = dxl_io.scan(range(4))
+    found_ids = dxl_io1.scan(range(4))
     print('Found ids:', found_ids)
 
     if len(found_ids) < 2:
