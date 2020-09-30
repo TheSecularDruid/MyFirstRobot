@@ -17,15 +17,7 @@ if __name__ == '__main__':
     port = ports[0]
     print('Using the first on the list', port)
 
-    found_ids = dxl_io1.scan(range(4))
-    print('Found ids:', found_ids)
 
-    if len(found_ids) < 2:
-        raise IOError('You should connect at least two motors on the bus for this test.')
-
-    ids = found_ids[:2]
-
-    dxl_io.enable_torque(ids)
 
 
 d=int(input("entrer une distance"))
