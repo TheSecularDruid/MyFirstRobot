@@ -7,7 +7,8 @@ if not ports:
 
 dxl_io_g = pypot.dynamixel.DxlIO(ports[0])
 dxl_io_d = pypot.dynamixel.DxlIO(ports[1])
-dxl_io.set_wheel_mode([1])
+dxl_io_g.set_wheel_mode([1])
+dxl_io_d.set_wheel_mode([1])
 t0 = time.time()
 while True:
     t = time.time()
