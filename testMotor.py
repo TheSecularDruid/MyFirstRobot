@@ -37,6 +37,9 @@ class Motor():
 
     def set_speed_left_wheels(self, speed):
         self.dxl_io.set_moving_speed({1: speed})
+    
+    def set_goal_position(self,position):
+        self.dxl_io.set_goal_position({1:position})
 
     def set_speed_right_wheels(self, speed):
         self.dxl_io.set_moving_speed({2: speed})
@@ -61,12 +64,13 @@ if __name__ == "__main__":
     # m.set_speed_left_wheels(60)
     # m.set_speed_right_wheels(-60)
     # time.sleep(10)
-    m.set_speed_left_wheels(60)
-    m.set_speed_right_wheels(-30)
-    time.sleep(10)
-    m.set_speed_right_wheels(0)
-    m.set_speed_left_wheels(0)
-    m.acrossDistance(50,3)
+    # m.set_speed_left_wheels(60)
+    # m.set_speed_right_wheels(-30)
+    # time.sleep(10)
+    # m.set_speed_right_wheels(0)
+    # m.set_speed_left_wheels(0)
+    # m.acrossDistance(50,3)
+    set_goal_position(-90)
     print('test')
 
     print(m.get_speed_right_wheels())
