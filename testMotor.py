@@ -47,8 +47,11 @@ class Motor():
         return self.dxl_io.get_present_speed([2])
 
     def goto(self,speed,distance):
-        return self.dxl_io.set_speed_left_wheels(speed),self.dxl_io.set_speed_right_wheels(-speed),
-        time.sleep(distance/speed),self.set_speed_right_wheels(0),self.set_speed_left_wheels(0)
+        self.dxl_io.set_speed_left_wheels(speed)
+        self.dxl_io.set_speed_right_wheels(-speed)
+        time.sleep(distance/speed)
+        self.set_speed_right_wheels(0)
+        self.set_speed_left_wheels(0)
 
 if __name__ == "__main__":
     m = Motor()
