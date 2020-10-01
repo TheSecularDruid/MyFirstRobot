@@ -53,5 +53,6 @@ if __name__ == "main":
     time.sleep(2)
     m.set_speed_right_wheels(0)
     m.set_speed_left_wheels(0)
+    print('test')
 
     print(m.get_speed_right_wheels())
