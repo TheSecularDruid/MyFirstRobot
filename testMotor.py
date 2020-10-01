@@ -1,12 +1,31 @@
 import pypot.dynamixel
 import time
 
-ports = pypot.dynamixel.get_available_ports()
-if not ports:
-    exit('No port')
 
-dxl_io_g = pypot.dynamixel.DxlIO(ports[0])
-dxl_io_d = pypot.dynamixel.DxlIO(ports[1])
+ports = pypot.dynamixel.get_available_ports()
+print('available ports:', ports)
+
+if not ports:
+    raise IOError('No port available.')
+
+portg = ports[0]
+portd = ports[1]
+
+# dxl_io.factory_reset()
+# print("reset !")
+# exit(0)
+
+found_ids = dxl_io.scan(range(10))
+print('Found ids:', found_ids)
+
+if len(found_ids) < 2:
+    raise IOError('You should connect at least two motors on the bus for this test.')
+
+ids = found_ids[:2]
+
+
+dxl_io_g = pypot.dynamixel.DxlIO(portg)
+dxl_io_d = pypot.dynamixel.DxlIO(portd)
 dxl_io_g.set_wheel_mode([1])
 dxl_io_d.set_wheel_mode([1])
 t0 = time.time()
