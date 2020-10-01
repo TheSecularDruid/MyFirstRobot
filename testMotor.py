@@ -1,4 +1,5 @@
 import pypot.dynamixel
+import time
 
 ports = pypot.dynamixel.get_available_ports()
 if not ports:
