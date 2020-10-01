@@ -49,9 +49,7 @@ class Motor():
     def goto(self,speed,distance):
         self.set_speed_left_wheels(speed)
         self.set_speed_right_wheels(-speed)
-        time.sleep(distance/speed)
-        self.set_speed_right_wheels(0)
-        self.set_speed_left_wheels(0)
+        
 
 if __name__ == "__main__":
     m = Motor()
