@@ -6,7 +6,7 @@ print('available ports:', ports)
 
 
 dxl_io = pypot.dynamixel.DxlIO(ports[0])
-dxl_io.set_wheel_mode([1])
+dxl_io.set_wheel_mode([1,2])
 found_ids = dxl_io.scan(range(10))
 print('Found ids:', found_ids)
 t0 = time.time()
