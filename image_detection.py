@@ -4,14 +4,14 @@ import numpy as np
 
 
 def openCamera():
-    cam = cv.videoCapture(-1)
+    cam = cv.VideoCapture(-1)
     if(not cam.isOpened()):
         raise IOError
     return cam
 
 def closeCamera(camera):
     camera.release()
-    cv2.destroyAllWindows()
+    cv.destroyAllWindows()
 
 def displayVideo(camera, time_out=10):
     if(not camera.isOpened()):
@@ -25,15 +25,13 @@ def displayVideo(camera, time_out=10):
             raise IOError
 
         imshow(frame)
-        if cv2.waitKey(25) & 0xFF == ord('q'):
+        if cv.waitKey(25) & 0xFF == ord('q'):
             raise KeyboardInterrupt
 
 
 def colorFilter(image, color): #returns binImage
-    image = cv.GaussianBlur(image, (5,3))
-    upper = [0,0,0]
-    lower = [0,0,0]
-    hsv = cvtColor(image, cv.COLOR_BGR2HSV)
+    image = cv.GaussianBlur(image, (5,5),5)
+    hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
 
     if(color=='Green'):
         lower = np.array([50,50,150])
@@ -70,7 +68,7 @@ def detectLineAngle(binImage):
     pass
 
 #test calls
-if __name__==__main__:
+if __name__=='__main__':
     cam = openCamera()
 
     while(True):
@@ -81,10 +79,10 @@ if __name__==__main__:
 
         cv.imshow("Seen image",frame)
         cv.imshow('Green filter',colorFilter(frame,'Green'))
-        cv.imshow("Yellow filter",coloFilter(frame,'Yellow'))
+        cv.imshow("Yellow filter",colorFilter(frame,'Yellow'))
         cv.imshow('Blue filter',colorFilter(frame,'Blue'))
         cv.imshow('Red filter',colorFilter(frame,'Red'))
-        waitKey(1)
+        cv.waitKey(1)
 
     closeCamera(cam)
 
