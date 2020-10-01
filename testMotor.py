@@ -47,7 +47,7 @@ class Motor():
     def get_speed_right_wheels(self):
         return self.dxl_io.get_present_speed([2])
 
-    def goto(self,speed,distance):
+    def acrossDistance(self,speed,distance):
         omega=speed*1.39*2*math.pi/60
         radiusWheel=0.026
         self.set_speed_left_wheels(speed)
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     # time.sleep(10)
     # m.set_speed_right_wheels(0)
     # m.set_speed_left_wheels(0)
-    m.goto(50,1)
+    m.acrossDistance(50,3)
     print('test')
 
     print(m.get_speed_right_wheels())
