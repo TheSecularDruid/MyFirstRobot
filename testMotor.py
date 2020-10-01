@@ -46,7 +46,7 @@ class Motor():
     def get_speed_right_wheels(self):
         return self.dxl_io.get_present_speed([2])
 
-if __name__ == "main":
+if __name__ == "__main__":
     m = Motor()
     m.set_speed_left_wheels(50)
     m.set_speed_right_wheels(50)
