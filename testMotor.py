@@ -3,7 +3,7 @@ import time
 
 ports = pypot.dynamixel.get_available_ports()
 print('available ports:', ports)
-port=int(input("Choisissez le port"))
+port=input("Choisissez le port")
 
 dxl_io = pypot.dynamixel.DxlIO(port)
 dxl_io.set_wheel_mode([1])
