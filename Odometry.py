@@ -75,7 +75,8 @@ def tick_odom(xi,yi,tetai):
     tetaf=tetaii+dx_dy_dteta[2]
     return [xf,yf,tetaf]
 
-
+def go_to_xyteta(x,y,teta):
+    
     
 
     
