@@ -63,7 +63,7 @@ if __name__ == "__main__":
     time.sleep(10)
     m.set_speed_right_wheels(0)
     m.set_speed_left_wheels(0)
-    m.goto(60,10)
+    m.goto(50,1)
     print('test')
 
     print(m.get_speed_right_wheels())
