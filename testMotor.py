@@ -3,9 +3,9 @@ import time
 
 ports = pypot.dynamixel.get_available_ports()
 print('available ports:', ports)
-port=input("Choisissez le port")
 
-dxl_io = pypot.dynamixel.DxlIO(port)
+
+dxl_io = pypot.dynamixel.DxlIO(ports[0])
 dxl_io.set_wheel_mode([1])
 t0 = time.time()
 while True:
@@ -14,5 +14,6 @@ while True:
         break
 
     dxl_io.set_moving_speed({1: 10})
+    dxl_io.set_moving_speed({2: 40})
 
     time.sleep(5)
