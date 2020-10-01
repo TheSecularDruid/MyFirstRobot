@@ -1,8 +1,8 @@
 import pypot.dynamixel
 import time
 
-ports = pypot.dynamixel.get_available_ports()
-print('available ports:', ports)
+# ports = pypot.dynamixel.get_available_ports()
+# print('available ports:', ports)
 
 
 dxl_io = pypot.dynamixel.DxlIO(ports[0])
