@@ -15,13 +15,6 @@ portd = ports[1]
 # print("reset !")
 # exit(0)
 
-found_ids = dxl_io.scan(range(10))
-print('Found ids:', found_ids)
-
-if len(found_ids) < 2:
-    raise IOError('You should connect at least two motors on the bus for this test.')
-
-ids = found_ids[:2]
 
 
 dxl_io_g = pypot.dynamixel.DxlIO(portg)
