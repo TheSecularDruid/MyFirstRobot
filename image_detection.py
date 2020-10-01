@@ -21,7 +21,7 @@ def displayVideo(camera, time_out=10):
     while(time.time()-time_init<time_out):
         ret,frame = camera.read()
 
-        if(!ret):
+        if(not ret):
             raise IOError
 
         imshow(frame)
@@ -63,13 +63,14 @@ def colorFilter(image, color): #returns binImage
 
 def detectCrossing(binImage):
      #ToDo
+     pass
 
 def detectLineAngle(binImage):
     #ToDo
-
+    pass
 
 #test calls
-if name==__main__:
+if __name__==__main__:
     cam = openCamera()
 
     while(True):
