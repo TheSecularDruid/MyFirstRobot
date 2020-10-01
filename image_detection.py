@@ -7,6 +7,9 @@ def openCamera():
     cam = cv.VideoCapture(-1)
     if(not cam.isOpened()):
         raise IOError
+    cam.set(cv.CAP_PROP_FRAME_WIDTH, 640)
+    cam.set(cv.CAP_PROP_FRAME_HEIGHT, 480)
+    cam.set(cv.CAP_PROP_FPS,1)
     return cam
 
 def closeCamera(camera):
