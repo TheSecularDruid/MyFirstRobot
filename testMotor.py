@@ -25,6 +25,7 @@
 
 import pypot.dynamixel
 import time
+import math
 
 class Motor():
     def __init__(self):
@@ -47,9 +48,11 @@ class Motor():
         return self.dxl_io.get_present_speed([2])
 
     def goto(self,speed,distance):
+        omega=speed*1.39*2*math.pi/60
+        radiusWheel=0.026
         self.set_speed_left_wheels(speed)
         self.set_speed_right_wheels(-speed)
-        time.sleep(distance/(0.14*speed))
+        time.sleep(distance/(0.14*speed*radiusWheel))
         self.set_speed_right_wheels(0)
         self.set_speed_left_wheels(0)
 
