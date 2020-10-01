@@ -27,7 +27,7 @@ import pypot.dynamixel
 import time
 
 class Motor():
-    def init(self):
+    def __init__(self):
         ports = pypot.dynamixel.get_available_ports()
         if not ports:
             exit('No port')
