@@ -15,7 +15,7 @@ while True:
     if (t - t0) > 5:
         break
 
-    dxl_io.set_moving_speed({[1,2]: 40})
+    dxl_io.set_moving_speed({2: 40})
 
     
 
