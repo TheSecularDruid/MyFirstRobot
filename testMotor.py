@@ -49,8 +49,8 @@ class Motor():
 if __name__ == "__main__":
     m = Motor()
     m.set_speed_left_wheels(50)
-    m.set_speed_right_wheels(50)
-    time.sleep(2)
+    m.set_speed_right_wheels(-50)
+    time.sleep(10)
     m.set_speed_right_wheels(0)
     m.set_speed_left_wheels(0)
     print('test')
