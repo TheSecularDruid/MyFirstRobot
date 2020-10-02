@@ -21,10 +21,10 @@ def odomRobot(vLinear,vAngular,deltaT):
     dteta=vAngular*deltaT
     return[dx,dy,dteta]
 
-def odomWorld(vLinear,vAngular,deltaT):
+def odomWorld(vLinear,vAngular,deltaT,tetai):
     dteta=vAngular*deltaT
-    dx=math.cos(tetaR-W)*vLinear*deltaT
-    dy=math.sin(tetaR-W)*vLinear*dteta*deltaT
+    dx=math.cos(tetai)*vLinear*deltaT
+    dy=math.sin(tetai)*vLinear*dteta*deltaT
     return[dx,dy,dteta]
 
 

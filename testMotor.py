@@ -118,7 +118,7 @@ class Motor():
             l=odom.direct_kinematics(speedL[0],speedR[0])
             vLinear=l[0]
             vAngular=l[1]
-            dx_dy_dteta=odom.odomWorld(vLinear,vAngular,deltaT)
+            dx_dy_dteta=odom.odomWorld(vLinear,vAngular,deltaT,tetai)
             L=odom.tick_odom(xi,yi,tetai,dx_dy_dteta)
             xi=L[0]
             yi=L[1]
