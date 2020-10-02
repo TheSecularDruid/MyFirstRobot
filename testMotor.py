@@ -27,7 +27,7 @@ import pypot.dynamixel
 import time
 import math
 import matplotlib.pyplot as plt
-import Odometry.py as odom
+import Odometry as odom
 
 speed=50
 radiusWheel=0.026

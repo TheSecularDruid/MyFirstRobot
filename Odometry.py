@@ -25,7 +25,7 @@ def odomWorld(vLinear,vAngular,deltaT):
     dteta=vAngular*deltaT
     dx=math.cos(tetaR-W)*vLinear*deltaT
     dy=math.sin(tetaR-W)*vLinear*dteta*deltaT
-    return(dx,dy,dteta)
+    return[dx,dy,dteta]
 
 
 
@@ -38,7 +38,7 @@ def newPosTrans(d,x0,y0,teta0):
     x=d*cos(teta0)+x0
     y=d*sin(teta0)+y0
     teta=teta0
-    return(x,y,teta)
+    return[x,y,teta]
 
 
 def newPosRotL(x0,y0,teta0):
@@ -46,14 +46,14 @@ def newPosRotL(x0,y0,teta0):
     x=x0-e*sin(teta0)+e*sin(teta0+tetaR)
     y=y0+e*cos(teta0)-e*cos(teta0+tetaR)
     teta=teta0+tetaR
-    return(x,y,teta)
+    return[x,y,teta]
 
 def newPosRotR(x0,y0,teta0):
     tetaR=vAngular*deltaT
     x=x0+e*math.sin(teta0)-e*math.sin(teta0-tetaR)
     y=y0-e*cos(teta0)+e*cos(teta0-tetaR)
     teta=teta0-tetaR
-    return(x,y,teta)
+    return[x,y,teta]
 
 
 def tick_odom(xi,yi,tetai):
