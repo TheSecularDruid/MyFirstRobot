@@ -223,8 +223,9 @@ if __name__ == "__main__":
     # m.go_to_xyteta(1000,1000,60)
     # m.go_to_xyteta1(1000,1000,60)
 
-    # X=[0]
-    # Y=[0]
+    X=[0]
+    Y=[0]
+    m.disa
    
     while m.getStateWheel()==1:
         print('test')
