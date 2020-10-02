@@ -30,8 +30,8 @@ import matplotlib.pyplot as plt
 import Odometry as odom
 
 speed=50
-radiusWheel=0.026
-entraxe=0.089
+radiusWheel=26
+entraxe=89
 omegaL=speed*1.39*2*math.pi/60
 omegaR=speed*1.39*2*math.pi/60
 vitesseL=radiusWheel*omegaL
@@ -64,7 +64,7 @@ class Motor():
 
     def acrossDistance(self,speed,distance):
         omega=speed*1.39*2*math.pi/60
-        radiusWheel=0.026
+        radiusWheel=26
         self.set_speed_left_wheels(speed)
         self.set_speed_right_wheels(-speed)
         time.sleep(distance/(0.14*speed*radiusWheel))
@@ -84,33 +84,41 @@ class Motor():
 
     def go_to_xyteta(self,x,y,teta):
         tetaRad=teta*math.pi/180
-        self.set_speed_left_wheels(speed)
-        self.set_speed_right_wheels(-speed)
-        time.sleep(x/(vitesseT))
-        if (y>=0):
+        alpha=math.atan(x/y)
+        gamma=math.pi/2-alpha
+        gammaRad=gamma*math.pi/180
+        if (gamma<0):
             self.set_speed_left_wheels(speed)
             self.set_speed_right_wheels(0)
-            time.sleep(2*entraxe*math.pi/(2*vitesseL))
+            time.sleep(2*entraxe*abs(gammaRad)/(vitesseR))
             self.set_speed_left_wheels(speed)
             self.set_speed_right_wheels(-speed)
-            time.sleep(y/(vitesseT))
-
+            time.sleep(math.sqrt(x**2+y**2)/(vitesseT))
+            if (abs(gamma)+teta>=0):
+                self.set_speed_left_wheels(0)
+                self.set_speed_right_wheels(-speed)
+                time.sleep(2*entraxe*(abs(gammaRad)+tetaRad)/(vitesseL))
+            else:
+                self.set_speed_left_wheels(speed)
+                self.set_speed_right_wheels(0)
+                time.sleep(2*entraxe*(abs(abs(gammaRad)+tetaRad))/(vitesseL))
         else:
             self.set_speed_left_wheels(0)
             self.set_speed_right_wheels(-speed)
-            time.sleep(2*entraxe*math.pi/(2*vitesseR))  
+            time.sleep(2*entraxe*gammaRad/(vitesseR))
             self.set_speed_left_wheels(speed)
             self.set_speed_right_wheels(-speed)
-            time.sleep(y/(vitesseT))
-        if teta>=0:
-            self.set_speed_left_wheels(0)
-            self.set_speed_right_wheels(-speed)
-            time.sleep(2*entraxe*tetaRad/(vitesseL))
-        else:    
-            self.set_speed_left_wheels(speed)
-            self.set_speed_right_wheels(0)
-            time.sleep(2*entraxe*abs(tetaRad)/(vitesseL))
+            time.sleep(math.sqrt(x**2+y**2)/(vitesseT))
+            if (gamma+teta>=0):
+                self.set_speed_left_wheels(0)
+                self.set_speed_right_wheels(-speed)
+                time.sleep(2*entraxe*(gammaRad+tetaRad)/(vitesseL))
+            else:
+                self.set_speed_left_wheels(speed)
+                self.set_speed_right_wheels(0)
+                time.sleep(2*entraxe*(abs(gammaRad+tetaRad))/(vitesseL))
 
+        
         self.set_speed_left_wheels(0)
         self.set_speed_right_wheels(0)
 
