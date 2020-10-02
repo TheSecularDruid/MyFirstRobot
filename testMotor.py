@@ -110,8 +110,6 @@ class Motor():
         xi=0
         yi=0
         t=0
-        X=[xi]
-        Y=[yi]
         # while self.getStateWheel()==1:
         while True:
             speedR=self.get_speed_right_wheels()
@@ -123,10 +121,9 @@ class Motor():
             L=odom.tick_odom(xi,yi,tetai,dx_dy_dteta)
             xi=L[0]
             yi=L[1]
-            X.append(xi)
-            Y.append(yi)
             tetai=L[2]
             time.sleep(deltaT)
+            return (xi,yi)
             
 
 
@@ -143,10 +140,14 @@ if __name__ == "__main__":
     # m.set_speed_right_wheels(0)
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
+    X=[0]
+    Y=[0]
     while m.getStateWheel()==1:
         print('test')
-        m.odometryPlot(0.1)
-    return (X,Y)    
+        L=m.odometryPlot(0.1)
+        X.append(L[0])
+        Y.append(L[0])
+        print(X) 
     plt.plot(X,Y)    
     plt.show()
     
