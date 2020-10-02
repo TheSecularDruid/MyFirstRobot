@@ -27,7 +27,8 @@ while True:
         break
     dxl_io1 = pypot.dynamixel.DxlIO(ports[0])
     dxl_io1.set_wheel_mode([1])
-    dxl_io1.set_moving_speed({1: 40})
+    dxl_io1.set_moving_speed({1: 0})
+    dxl_io1.set_moving_speed({2: 0})
     dxl_io1.set_goal_position(d)
 
     dxl_io2 = pypot.dynamixel.DxlIO(ports[1])

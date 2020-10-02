@@ -49,7 +49,7 @@ def colorFilter(image, color): #returns binImage
         upper = np.array([130,160,230])
 
     elif(color=='Yellow'):
-        lower = np.array([10,80,180])
+        lower = np.array([10,80,130])
         upper = np.array([50,180,255])
 
     else:
@@ -60,15 +60,26 @@ def colorFilter(image, color): #returns binImage
 
     mask = cv.inRange(hsv, lower, upper)
     result = cv.bitwise_and(image, image, mask=mask)
-    return result
+    return result[:,:,2]
 
 def detectCrossing(binImage):
      #ToDo
      pass
 
-def detectLineAngle(binImage):
-    #ToDo
-    pass
+def detectLineCenter(binImage):
+    contours, _ = cv.findContours(binImage, 1, cv.CHAIN_APPROX_SIMPLE)
+    if(np.shape(contours)[0]!=0):
+
+        c = max(contours, key=cv.contourArea)
+        M = cv.moments(c)
+        center = np.array([int(M['m10']/M['m00']),int(M['m01']/M['m00'])])
+        return center
+    return 0
+
+def pixelToRobot(pixel,offset_cam, window_size,cam):
+    x_rob = offset_cam[0] - window_size[0]*pixel[0]/cam.get(cv.CAP_PROP_FRAME_HEIGHT)
+    y_rob = offset_cam[1] - window_size[1]*pixel[1]/cam.get(cv.CAP_PROP_FRAME_WIDTH)
+    return (x_rob,y_rob)
 
 #test calls
 if __name__=='__main__':
@@ -79,13 +90,16 @@ if __name__=='__main__':
         if(not ret):
             print("image not fetched by camera")
             raise IOError
-
+        #detectLineAngle(colorFilter(frame,'Yellow'))
+    
         cv.imshow("Seen image",frame)
+        cv.waitKey(1)
+    closeCamera(cam)
+'''
         cv.imshow('Green filter',colorFilter(frame,'Green'))
         cv.imshow("Yellow filter",colorFilter(frame,'Yellow'))
         cv.imshow('Blue filter',colorFilter(frame,'Blue'))
         cv.imshow('Red filter',colorFilter(frame,'Red'))
         cv.waitKey(1)
-
-    closeCamera(cam)
-
+'''     
+    

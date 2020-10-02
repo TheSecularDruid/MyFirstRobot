@@ -30,8 +30,8 @@ import matplotlib.pyplot as plt
 import Odometry as odom
 
 speed=50
-radiusWheel=0.026
-entraxe=0.089
+radiusWheel=26
+entraxe=89
 omegaL=speed*1.39*2*math.pi/60
 omegaR=speed*1.39*2*math.pi/60
 vitesseL=radiusWheel*omegaL
@@ -64,7 +64,7 @@ class Motor():
 
     def acrossDistance(self,speed,distance):
         omega=speed*1.39*2*math.pi/60
-        radiusWheel=0.026
+        radiusWheel=26
         self.set_speed_left_wheels(speed)
         self.set_speed_right_wheels(-speed)
         time.sleep(distance/(0.14*speed*radiusWheel))
