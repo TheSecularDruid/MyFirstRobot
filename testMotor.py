@@ -93,8 +93,25 @@ class Motor():
             self.set_speed_left_wheels(0)
             self.set_speed_right_wheels(0)
     
-    def odometry(self,te):
-        
+    def odometryPlot(self,deltaT):  
+        tetai=0
+        xi=0
+        yi=0
+        t=0
+        # while self.getStateWheel()==1:
+        while True
+            plt.plot(xi,yi)
+            speedR=self.get_speed_right_wheels()
+            speedL=self.get_speed_left_wheels()
+            l=odom.direct_kinematics(speedL,speedR)
+            vLinear=l[0]
+            vAngular=l[1]
+            L=odom.tick_odom(xi,yi,tetai)
+            xi=L[0]
+            yi=L[1]
+            tetai=L[2]
+            time.sleep(deltaT)
+
 
 
 
@@ -109,7 +126,8 @@ if __name__ == "__main__":
     # m.set_speed_right_wheels(0)
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
-    m.go_to_xyteta(1,1,-90)
+    while self.getStateWheel()==1:
+        odometryPlot(self,0.1)
     print('test')
     
 
