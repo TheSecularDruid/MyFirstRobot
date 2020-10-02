@@ -32,10 +32,10 @@ import Odometry.py
 speed=50
 radiusWheel=0.026
 entraxe=8.9
-omegaL=speed1.392math.pi/60
-omegaR=speed1.392math.pi/60
-vitesseL=radiusWheelomegaL
-vitesseR=radiusWheelomegaG
+omegaL=speed*1.392*math.pi/60
+omegaR=speed*1.392*math.pi/60
+vitesseL=radiusWheel*omegaL
+vitesseR=radiusWheel*omegaG
 vitesseT=vitesseR
 
 class Motor():
