@@ -231,7 +231,9 @@ if __name__ == "__main__":
         Y.append(L[0])
         
     print(X)
-    plt.plot(X,Y)    
+    print(Y)    
+    plt.title("Cartographie du Robot")
+    plt.scatter(X,Y,s=100)    
     plt.show()
     
     
