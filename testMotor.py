@@ -142,13 +142,13 @@ if __name__ == "__main__":
     # m.acrossDistance(50,3)
     X=[0]
     Y=[0]
+    time.sleep(2)
     while m.getStateWheel()==1:
         print('test')
         L=m.odometryPlot(0.1)
         X.append(L[0])
         Y.append(L[0])
-    else:
-        break    
+        
         
     plt.plot(X,Y)    
     plt.show()
