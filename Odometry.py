@@ -1,12 +1,6 @@
 import math
 e=89
 radiusWheel=25
-         
-distanceD = 0           #distance parcourue par la roue droite
-distanceG = 0           #distance parcourue par la roue gauche
-byte etatD             #état du capteur de roue droit
-byte etatG             #état du capteur de roue gauche
-
 tetaR-W=0 #angle entre repère robot et monde (initialement confondu)
 
 
@@ -76,7 +70,7 @@ def tick_odom(xi,yi,tetai):
     return [xf,yf,tetaf]
 
 def go_to_xyteta(x,y,teta):
-    
+
     
 
     

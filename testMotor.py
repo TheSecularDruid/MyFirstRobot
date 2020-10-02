@@ -26,6 +26,17 @@
 import pypot.dynamixel
 import time
 import math
+import matplotlib.pyplot as plt
+import Odometry.py
+
+speed=50
+radiusWheel=0.026
+entraxe=8.9
+omegaL=speed1.392math.pi/60
+omegaR=speed1.392math.pi/60
+vitesseL=radiusWheelomegaL
+vitesseR=radiusWheelomegaG
+vitesseT=vitesseR
 
 class Motor():
     def __init__(self):
@@ -59,6 +70,28 @@ class Motor():
         self.set_speed_right_wheels(0)
         self.set_speed_left_wheels(0)
 
+
+    def go_to_xyteta(self,x,y,teta):
+
+        if (teta>=0):
+            self.set_speed_left_wheels(0)
+            self.set_speed_right_wheels(speed)
+            time.sleep(entraxe(vitesseL-vitesseR)/entraxe)
+            self.set_speed_left_wheels(speed)
+            self.set_speed_right_wheels(-speed)
+            time.sleep(sqrt(x2+y2)/vitesseT)
+            self.set_speed_left_wheels(0)
+            self.set_speed_right_wheels(0)
+        else:
+            self.set_speed_left_wheels(speed)
+            self.set_speed_right_wheels(0)
+            time.sleep(entraxe(vitesseR-vitesseL)/entraxe)
+            self.set_speed_left_wheels(speed)
+            self.set_speed_right_wheels(-speed)
+            time.sleep(sqrt(x2+y2)/vitesseT)
+            self.set_speed_left_wheels(0)
+            self.set_speed_right_wheels(0)
+
 if __name__ == "__main__":
     m = Motor()
     # m.set_speed_left_wheels(60)
@@ -70,7 +103,9 @@ if __name__ == "__main__":
     # m.set_speed_right_wheels(0)
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
-    set_goal_position(-90)
+    go_to_xyteta(m,10,40,90)
     print('test')
+
+
 
     print(m.get_speed_right_wheels())
