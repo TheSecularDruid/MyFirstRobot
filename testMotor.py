@@ -147,7 +147,9 @@ if __name__ == "__main__":
         L=m.odometryPlot(0.1)
         X.append(L[0])
         Y.append(L[0])
-        print(X) 
+    else:
+        break    
+        
     plt.plot(X,Y)    
     plt.show()
     
