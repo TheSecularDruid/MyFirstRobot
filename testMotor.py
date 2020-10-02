@@ -136,8 +136,8 @@ if __name__ == "__main__":
     # m.set_speed_right_wheels(0)
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
-    while self.getStateWheel()==1:
-        odometryPlot(self,0.1)
+    while m.getStateWheel()==1:
+        odometryPlot(m,0.1)
     print('test')
     
 
