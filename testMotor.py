@@ -143,7 +143,7 @@ if __name__ == "__main__":
     while m.getStateWheel()==1:
         print('test')
         m.odometryPlot(0.1)
-    plt.show()
+        plt.show()
     
     
 
