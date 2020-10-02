@@ -112,10 +112,8 @@ class Motor():
         while True:
             plt.plot(xi,yi)
             speedR=self.get_speed_right_wheels()
-            print(speedR)
-            print(speedL)
             speedL=self.get_speed_left_wheels()
-            l=odom.direct_kinematics(speedL,speedR)
+            l=odom.direct_kinematics(speedL[0],speedR[0])
             vLinear=l[0]
             vAngular=l[1]
             L=odom.tick_odom(xi,yi,tetai)
