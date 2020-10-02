@@ -23,8 +23,8 @@ def odomRobot(vLinear,vAngular,deltaT):
 
 def odomWorld(vLinear,vAngular,deltaT,tetai):
     dteta=vAngular*deltaT
-    dx=math.cos(tetai)*vLinear*deltaT
-    dy=math.sin(tetai)*vLinear*dteta*deltaT
+    dx=math.cos(tetai*math.pi/180)*vLinear*deltaT
+    dy=math.sin(tetai*math.pi/180)*vLinear*dteta*math.pi*deltaT/180
     return[dx,dy,dteta]
 
 
@@ -35,23 +35,23 @@ def rotation(x0,y0):
     return nbrWheelturn
 
 def newPosTrans(d,x0,y0,teta0):
-    x=d*cos(teta0)+x0
-    y=d*sin(teta0)+y0
+    x=d*cos(teta0*math.pi/180)+x0
+    y=d*sin(teta0*math.pi/2)+y0
     teta=teta0
     return[x,y,teta]
 
 
 def newPosRotL(x0,y0,teta0):
     tetaR=vAngular*deltaT
-    x=x0-e*sin(teta0)+e*sin(teta0+tetaR)
-    y=y0+e*cos(teta0)-e*cos(teta0+tetaR)
+    x=x0-e*sin(teta0*math.pi/180)+e*sin((teta0+tetaR)*math.pi/180)
+    y=y0+e*cos(teta0*math.pi/180)-e*cos((teta0+tetaR)*math.pi/180)
     teta=teta0+tetaR
     return[x,y,teta]
 
 def newPosRotR(x0,y0,teta0):
     tetaR=vAngular*deltaT
-    x=x0+e*math.sin(teta0)-e*math.sin(teta0-tetaR)
-    y=y0-e*cos(teta0)+e*cos(teta0-tetaR)
+    x=x0+e*math.sin(teta0*math.pi/180)-e*math.sin((teta0-tetaR)*math.pi/180)
+    y=y0-e*cos(teta0*math.pi/180)+e*cos((teta0-tetaR)*math.pi/180)
     teta=teta0-tetaR
     return[x,y,teta]
 

@@ -186,7 +186,7 @@ class Motor():
     
     
     def odometryPlot(self,deltaT):  
-        tetai=0
+        tetai=1
         xi=0
         yi=0
         t=0
@@ -199,7 +199,6 @@ class Motor():
             vAngular=l[1]
             dx_dy_dteta=odom.odomWorld(vLinear,vAngular,deltaT,tetai)
             L=odom.tick_odom(xi,yi,tetai,dx_dy_dteta)
-            print(L)
             xi=L[0]
             yi=L[1]
             tetai=L[2]
