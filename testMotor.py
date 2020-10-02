@@ -86,7 +86,7 @@ class Motor():
         else:
             self.set_speed_left_wheels(speed)
             self.set_speed_right_wheels(0)
-            time.sleep(entraxe*tetaRad/(vitesseL))
+            time.sleep(entraxe*abs(tetaRad)/(vitesseL))
             self.set_speed_left_wheels(speed)
             self.set_speed_right_wheels(-speed)
             time.sleep(sqrt(x**2+y**2)/vitesseT)
