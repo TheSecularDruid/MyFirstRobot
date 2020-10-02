@@ -74,7 +74,7 @@ class Motor():
     def getStateWheel(self):
         speedL=self.get_speed_left_wheels()
         speedR=self.get_speed_right_wheels()
-        if  (speedL!=0 or speedR!=0):
+        if  (speedL[0]!=0 or speedR[0]!=0):
             print("les moteurs sont mobiles")
             return 1
         else:
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     # m.acrossDistance(50,3)
     X=[0]
     Y=[0]
-    time.sleep(2)
+   
     while m.getStateWheel()==1:
         print('test')
         L=m.odometryPlot(0.1)
