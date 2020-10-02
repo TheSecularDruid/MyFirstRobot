@@ -35,7 +35,7 @@ entraxe=8.9
 omegaL=speed*1.392*math.pi/60
 omegaR=speed*1.392*math.pi/60
 vitesseL=radiusWheel*omegaL
-vitesseR=radiusWheel*omegaG
+vitesseR=radiusWheel*omegaR
 vitesseT=vitesseR
 
 class Motor():
