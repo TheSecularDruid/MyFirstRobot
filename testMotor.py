@@ -220,23 +220,23 @@ if __name__ == "__main__":
     # m.set_speed_right_wheels(0)
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
-    m.go_to_xyteta(1000,1000,60)
+    # m.go_to_xyteta(1000,1000,60)
     m.go_to_xyteta1(1000,1000,60)
 
-    X=[0]
-    Y=[0]
+    # X=[0]
+    # Y=[0]
    
-    while m.getStateWheel()==1:
-        print('test')
-        L=m.odometryPlot(0.1)
-        X.append(L[0])
-        Y.append(L[0])
+    # while m.getStateWheel()==1:
+    #     print('test')
+    #     L=m.odometryPlot(0.1)
+    #     X.append(L[0])
+    #     Y.append(L[0])
         
-    print(X)
-    print(Y)    
-    plt.title("Cartographie du Robot")
-    plt.scatter(X,Y,s=100)    
-    plt.show()
+    # print(X)
+    # print(Y)    
+    # plt.title("Cartographie du Robot")
+    # plt.scatter(X,Y,s=100)    
+    # plt.show()
     
     
     
