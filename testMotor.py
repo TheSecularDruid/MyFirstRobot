@@ -99,7 +99,7 @@ class Motor():
         yi=0
         t=0
         # while self.getStateWheel()==1:
-        while True
+        while True:
             plt.plot(xi,yi)
             speedR=self.get_speed_right_wheels()
             speedL=self.get_speed_left_wheels()
