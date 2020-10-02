@@ -140,6 +140,7 @@ if __name__ == "__main__":
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
     while m.getStateWheel()==1:
+        print('test')
         m.odometryPlot(0.1)
     print('test')
     
