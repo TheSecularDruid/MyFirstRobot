@@ -124,6 +124,7 @@ class Motor():
             yi=L[1]
             tetai=L[2]
             time.sleep(deltaT)
+            
 
 
 
@@ -142,6 +143,7 @@ if __name__ == "__main__":
     while m.getStateWheel()==1:
         print('test')
         m.odometryPlot(0.1)
+    plt.show()
     
     
 
