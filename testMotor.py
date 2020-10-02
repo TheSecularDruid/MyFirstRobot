@@ -146,7 +146,7 @@ if __name__ == "__main__":
     while m.getStateWheel()==1:
         print('test')
         m.odometryPlot(0.1)
-    return X,Y    
+    return (X,Y)    
     plt.plot(X,Y)    
     plt.show()
     
