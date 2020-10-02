@@ -104,7 +104,7 @@ if __name__ == "__main__":
     # m.set_speed_right_wheels(0)
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
-    m.go_to_xyteta(10,40,90)
+    m.go_to_xyteta(10,40,-90)
     print('test')
 
 
