@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt
 
 speed=50
 radiusWheel=0.026
-entraxe=8.9
+entraxe=0.089
 omegaL=speed*1.392*math.pi/60
 omegaR=speed*1.392*math.pi/60
 vitesseL=radiusWheel*omegaL
@@ -75,7 +75,7 @@ class Motor():
 
         if (teta>=0):
             self.set_speed_left_wheels(0)
-            self.set_speed_right_wheels(speed)
+            self.set_speed_right_wheels(-speed)
             time.sleep(entraxe*teta/(vitesseR))
             self.set_speed_left_wheels(speed)
             self.set_speed_right_wheels(-speed)
