@@ -225,7 +225,7 @@ if __name__ == "__main__":
 
     X=[0]
     Y=[0]
-    m.disa
+    
    
     while m.getStateWheel()==1:
         print('test')
