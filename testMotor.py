@@ -103,6 +103,8 @@ class Motor():
             self.set_speed_left_wheels(0)
             self.set_speed_right_wheels(0)
     
+    
+    
     def odometryPlot(self,deltaT):  
         tetai=0
         xi=0
@@ -116,7 +118,8 @@ class Motor():
             l=odom.direct_kinematics(speedL[0],speedR[0])
             vLinear=l[0]
             vAngular=l[1]
-            L=odom.tick_odom(xi,yi,tetai)
+            dx_dy_dteta=odom.odomWorld(vLinear,vAngular,deltaT)
+            L=odom.tick_odom(xi,yi,tetai,dx_dy_dteta)
             xi=L[0]
             yi=L[1]
             tetai=L[2]

@@ -56,11 +56,10 @@ def newPosRotR(x0,y0,teta0):
     return[x,y,teta]
 
 
-def tick_odom(xi,yi,tetai):
-    dx_dy_dteta=odomWorld(vLinear,vAngular,deltaT)
+def tick_odom(xi,yi,tetai,dx_dy_dteta):
     xf=xi+dx_dy_dteta[0]
     yf=yi+dx_dy_dteta[1]
-    tetaf=tetaii+dx_dy_dteta[2]
+    tetaf=tetai+dx_dy_dteta[2]
     return [xf,yf,tetaf]
 
 
