@@ -37,7 +37,7 @@ omegaR=speed*1.392*math.pi/60
 vitesseL=radiusWheel*omegaL
 vitesseR=radiusWheel*omegaR
 vitesseT=vitesseR
-tetaRad=teta*math.pi/180
+
 
 class Motor():
     def __init__(self):
@@ -73,7 +73,7 @@ class Motor():
 
 
     def go_to_xyteta(self,x,y,teta):
-
+        tetaRad=teta*math.pi/180
         if (teta>=0):
             self.set_speed_left_wheels(0)
             self.set_speed_right_wheels(-speed)
