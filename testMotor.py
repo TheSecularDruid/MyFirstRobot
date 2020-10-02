@@ -231,7 +231,7 @@ if __name__ == "__main__":
         print('test')
         L=m.odometryPlot(0.1)
         X.append(L[0])
-        Y.append(L[0])
+        Y.append(L[1])
         
     print(X)
     print(Y)    
