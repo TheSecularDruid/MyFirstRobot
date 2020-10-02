@@ -5,8 +5,8 @@ radiusWheel=25
 
 
 def direct_kinematics(vleft,vright):
-    vLinear=(vleft+vright)/2
-    vAngular=(vleft-vright)/2*e
+    vLinear=(vleft+vright)/2.0
+    vAngular=(vleft-vright)/2.0*e
     return [vLinear,vAngular]
 
 def inverse_kinematics(vLinear,vAngular):
