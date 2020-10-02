@@ -4,21 +4,15 @@ radiusWheel=25
 tetaR-W=0 #angle entre repère robot et monde (initialement confondu)
 
 
-
-
-
-
-def forward_kinematics()
-
 def direct_kinematics(vleft,vright):
     vLinear=(vleft+vright)/2
     vAngular=(vleft-vright)/2*e
-    return(vLinear,vAngular)
+    return [vLinear,vAngular]
 
 def inverse_kinematics(vLinear,vAngular):
     vleft=(vLinear+vAngular*e)
     vright=(vLinear-vAngular*e)
-    return(vleft,vright)
+    return [vleft,vright]
 
 
 def odomRobot(vLinear,vAngular,deltaT):
@@ -69,7 +63,7 @@ def tick_odom(xi,yi,tetai):
     tetaf=tetaii+dx_dy_dteta[2]
     return [xf,yf,tetaf]
 
-def go_to_xyteta(x,y,teta):
+
 
     
 

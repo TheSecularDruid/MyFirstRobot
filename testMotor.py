@@ -27,7 +27,7 @@ import pypot.dynamixel
 import time
 import math
 import matplotlib.pyplot as plt
-# import Odometry.py
+import Odometry.py as odom
 
 speed=50
 radiusWheel=0.026
@@ -92,6 +92,11 @@ class Motor():
             time.sleep(math.sqrt(x**2+y**2)/vitesseT)
             self.set_speed_left_wheels(0)
             self.set_speed_right_wheels(0)
+    
+    def odometry(self,te):
+        
+
+
 
 if __name__ == "__main__":
     m = Motor()
