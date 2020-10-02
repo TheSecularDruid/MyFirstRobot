@@ -151,8 +151,8 @@ class Motor():
             self.set_speed_right_wheels(0)
             time.sleep(2*entraxe*abs(tetaRad)/(vitesseL))
 
-    self.set_speed_left_wheels(0)
-    self.set_speed_right_wheels(0)
+        self.set_speed_left_wheels(0)
+        self.set_speed_right_wheels(0)
 
 
 
