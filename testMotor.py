@@ -123,33 +123,33 @@ class Motor():
         self.set_speed_right_wheels(0)
 
     def go_to_xyteta(self,x,y,teta):
-    tetaRad=teta*math.pi/180
-    self.set_speed_left_wheels(speed)
-    self.set_speed_right_wheels(-speed)
-    time.sleep(x/(vitesseT))
-    if (y>=0):
-        self.set_speed_left_wheels(speed)
-        self.set_speed_right_wheels(0)
-        time.sleep(2*entraxe*math.pi/(2*vitesseL))
+        tetaRad=teta*math.pi/180
         self.set_speed_left_wheels(speed)
         self.set_speed_right_wheels(-speed)
-        time.sleep(y/(vitesseT))
+        time.sleep(x/(vitesseT))
+        if (y>=0):
+            self.set_speed_left_wheels(speed)
+            self.set_speed_right_wheels(0)
+            time.sleep(2*entraxe*math.pi/(2*vitesseL))
+            self.set_speed_left_wheels(speed)
+            self.set_speed_right_wheels(-speed)
+            time.sleep(y/(vitesseT))
 
-    else:
-        self.set_speed_left_wheels(0)
-        self.set_speed_right_wheels(-speed)
-        time.sleep(2*entraxe*math.pi/(2*vitesseR))  
-        self.set_speed_left_wheels(speed)
-        self.set_speed_right_wheels(-speed)
-        time.sleep(abs(y)/(vitesseT))
-    if teta>=0:
-        self.set_speed_left_wheels(0)
-        self.set_speed_right_wheels(-speed)
-        time.sleep(2*entraxe*tetaRad/(vitesseL))
-    else:    
-        self.set_speed_left_wheels(speed)
-        self.set_speed_right_wheels(0)
-        time.sleep(2*entraxe*abs(tetaRad)/(vitesseL))
+        else:
+            self.set_speed_left_wheels(0)
+            self.set_speed_right_wheels(-speed)
+            time.sleep(2*entraxe*math.pi/(2*vitesseR))  
+            self.set_speed_left_wheels(speed)
+            self.set_speed_right_wheels(-speed)
+            time.sleep(abs(y)/(vitesseT))
+        if teta>=0:
+            self.set_speed_left_wheels(0)
+            self.set_speed_right_wheels(-speed)
+            time.sleep(2*entraxe*tetaRad/(vitesseL))
+        else:    
+            self.set_speed_left_wheels(speed)
+            self.set_speed_right_wheels(0)
+            time.sleep(2*entraxe*abs(tetaRad)/(vitesseL))
 
     self.set_speed_left_wheels(0)
     self.set_speed_right_wheels(0)
