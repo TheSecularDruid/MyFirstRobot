@@ -32,8 +32,8 @@ import matplotlib.pyplot as plt
 speed=50
 radiusWheel=0.026
 entraxe=0.089
-omegaL=speed*1.392*math.pi/60
-omegaR=speed*1.392*math.pi/60
+omegaL=speed*1.39*2*math.pi/60
+omegaR=speed*1.39*2*math.pi/60
 vitesseL=radiusWheel*omegaL
 vitesseR=radiusWheel*omegaR
 vitesseT=vitesseR
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     # m.set_speed_right_wheels(0)
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
-    m.go_to_xyteta(0.5,0.5,-90)
+    m.go_to_xyteta(1,1,-90)
     print('test')
     
 
