@@ -70,6 +70,16 @@ class Motor():
         time.sleep(distance/(0.14*speed*radiusWheel))
         self.set_speed_right_wheels(0)
         self.set_speed_left_wheels(0)
+    
+    def getStateWheel(self):
+        speedL=self.get_speed_left_wheels()
+        speedR=self.get_speed_right_wheels()
+        if  (speedL!=0 or speedR!=0):
+            print("les moteurs sont mobiles")
+            return 1
+        else:
+            print("les moteurs sont immobiles")
+            return 0 
 
 
     def go_to_xyteta(self,x,y,teta):

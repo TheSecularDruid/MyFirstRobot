@@ -1,7 +1,7 @@
 import math
 e=89
 radiusWheel=25
-tetaR-W=0 #angle entre repère robot et monde (initialement confondu)
+
 
 
 def direct_kinematics(vleft,vright):
