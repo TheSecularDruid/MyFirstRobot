@@ -221,6 +221,8 @@ if __name__ == "__main__":
     # m.set_speed_left_wheels(0)
     # m.acrossDistance(50,3)
     m.go_to_xyteta(1000,1000,60)
+    m.go_to_xyteta1(1000,1000,60)
+
     X=[0]
     Y=[0]
    
